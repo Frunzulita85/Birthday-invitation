@@ -23,8 +23,17 @@
 
     balloon.style.left = Math.random() * 100 + "vw";
     balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
-
     balloon.style.animationDuration = Math.random() * 5 + 6 + "s";
+
+    // CAND DAI CLICK PE BALON
+    balloon.addEventListener("click", () => {
+      balloon.classList.add("pop");
+      balloon.innerHTML = "💥";
+
+      setTimeout(() => {
+        balloon.remove();
+      }, 300);
+    });
 
     balloonContainer.appendChild(balloon);
 
@@ -34,7 +43,7 @@
   }
 
   setInterval(createBalloon, 800);
-</script>  
+</script>
  
  <h1>Hey, sunt Svetlana si este ziua mea de nastere!</h1>
 
